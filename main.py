@@ -11,20 +11,26 @@ class MyWin(QtWidgets.QMainWindow):
         # Событие нажатия на кнопку
         self.ui.pushButton.clicked.connect(self.MyFunction)
 
+        self.ui.textEdit.setText(' ')
+        self.ui.textEdit_2.setText(' ')
+        self.ui.textEdit_3.setText(' ')
+
     def MyFunction(self):
 
-        dpi_new=0;sens_old=0;dpi_old=0
+        dpi_new = 0
+        sens_old = 0
+        dpi_old = 0
 
-        dpi_old  = int ( self.ui.textEdit.toPlainText() )
-        sens_old = int ( self.ui.textEdit_2.toPlainText() )
-        dpi_new  = int ( self.ui.textEdit_3.toPlainText() )
+        dpi_old  = str ( self.ui.textEdit.toPlainText() )
+        sens_old = str ( self.ui.textEdit_2.toPlainText() )
+        dpi_new  = str ( self.ui.textEdit_3.toPlainText() )
 
-
-        if dpi_old != ' ' and sens_old != ' ' and dpi_new != ' ':
-            sens_new = dpi_old/dpi_new*sens_old
-            self.ui.label_4.setText('Your new sensetivity is: ' + str(sens_new))
+        if dpi_old == ' ' or sens_old == ' ' or dpi_new == ' ':
+            self.ui.label_4.setText('Enter correct values')
         else:
-            self.ui.label_4.setText('Enter correct values!')
+            sens_new = int(dpi_old)/int(dpi_new)*int(sens_old)
+            self.ui.label_4.setText('Your new sensetivity is: ' + str(sens_new))
+
 if __name__=="__main__":
     app = QtWidgets.QApplication(sys.argv)
     myapp = MyWin()
