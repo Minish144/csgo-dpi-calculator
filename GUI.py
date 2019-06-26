@@ -59,6 +59,6 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label.setText(_translate("MainWindow", "Current DPI"))
         self.label_2.setText(_translate("MainWindow", "Current CSGO Sensitivity"))
-        self.label_3.setText(_translate("MainWindow", "NEW DPI"))
+        self.label_3.setText(_translate("MainWindow", "New DPI"))
         self.pushButton.setText(_translate("MainWindow", "CALCULATE"))
 
